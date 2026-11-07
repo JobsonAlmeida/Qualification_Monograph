@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<indexing>
+ <object alt="" name="image1.png" object_type="graphic"/>
+ <object alt="" name="drawing" object_type="graphic"/>
+ <paragraph index="15" node_type="writer">Figura : (a) Sistemas Nervoso Central e Periférico. 
+(b) Componentes do encéfalo e medula espinhal. Fonte: Adaptado de (1) e (2)</paragraph>
+ <object alt="" name="Figura1" object_type="graphic"/>
+ <paragraph index="21" node_type="writer">Figura : Potencial de ação.
+ Fonte: Adaptado de (3)</paragraph>
+ <object alt="" name="Figura3 Copia 1" object_type="graphic"/>
+ <object alt="" name="Figura2" object_type="graphic"/>
+ <paragraph index="30" node_type="writer">Figura : Estrutura de um neurônio. Fonte: (4).</paragraph>
+ <object alt="" name="Figura4" object_type="graphic"/>
+ <paragraph index="36" node_type="writer">Figura : Massa cinzenta e massa branca. Fonte: (5)</paragraph>
+ <paragraph index="42" node_type="writer">           </paragraph>
+ <paragraph index="46" node_type="writer">UNIVERSIDADE ESTADUAL DE CAMPINAS (UNICAMP)</paragraph>
+ <paragraph index="47" node_type="writer">FACULDADE DE ENGENHARIA ELÉTRICA E DE COMPUTAÇÃO - FEEC </paragraph>
+ <paragraph index="48" node_type="writer"> PROGRAMA DE PÓS-GRADUAÇÃO EM ENGENHARIA ELÉTRICA </paragraph>
+ <paragraph index="49" node_type="writer">ÊNFASE EM ENGENHARIA DE COMPUTAÇÃO </paragraph>
+ <paragraph index="54" node_type="writer">JOBSON ANDRESON VALDEVINO DE ALMEIDA</paragraph>
+ <paragraph index="59" node_type="writer">CLASSIFICAÇÃO DE SINAIS DE EEG RELACIONADOS À FALA UTILIZANDO ESPECTROGRAMAS E REDES CONVOLUCIONAIS 3D</paragraph>
+ <paragraph index="70" node_type="writer">CAMPINAS</paragraph>
+ <paragraph index="71" node_type="writer">2026</paragraph>
+ <paragraph index="72" node_type="writer">JOBSON ANDRESON VALDEVINO DE ALMEIDA</paragraph>
+ <paragraph index="73" node_type="writer">CLASSIFICAÇÃO DE SINAIS DE EEG RELACIONADOS À FALA UTILIZANDO ESPECTROGRAMAS E REDES CONVOLUCIONAIS 3D </paragraph>
+ <paragraph index="78" node_type="writer">Monografia do Exame de Qualificação apresentada à Faculdade de Engenharia Elétrica e de Computação da Universidade Estadual de Campinas (UNICAMP) como parte dos requisitos exigidos para a obtenção do título de Mestre em Engenharia Elétrica, na área de Engenharia de Computação.</paragraph>
+ <paragraph index="99" node_type="writer">Orientador: Prof. Dr. Romis Ribeiro de Faissol Attux </paragraph>
+ <paragraph index="103" node_type="writer">ESTE TRABALHO CORRESPONDE À VERSÃO FINAL DA MONOGRAFIA PARA O EXAME DE QUALIFICAÇÃO.</paragraph>
+ <paragraph index="134" node_type="writer">“Superar os limites da inteligência e conquistar o universo.”</paragraph>
+ <paragraph index="135" node_type="writer">Inscrição da Medalha Fields</paragraph>
+ <paragraph index="137" node_type="writer">RESUMO </paragraph>
+ <paragraph index="139" node_type="writer">A pesquisa tem como objetivo classificar sinais de eletroencefalografia (EEG) registrados durante a produção da fala em voz alta e da fala interna. Isto é interessante pois o sucesso dessa classificação pode abrir caminho para o controle de dispositivos por meio do pensamento, com aplicações promissoras na área médica, especialmente no auxílio a pessoas com dificuldades de comunicação, além de aplicações em diversas outras áreas.</paragraph>
+ <paragraph index="140" node_type="writer">Para o estudo foi utilizada a base de dados Thinking Out Loud, a qual é composta por registros de EEG de 10 falantes nativos de espanhol, obtidos durante a produção da fala em voz alta e da fala interna, referentes a quatro palavras: Arriba (cima), Abajo (baixo), Derecha (direita) e Izquierda (esquerda).</paragraph>
+ <paragraph index="141" node_type="writer">A hipótese proposta é que as informações relacionadas a cada palavra se manifestam nas dimensões espaciais dos canais de EEG, nas frequências dos sinais e ao longo do tempo. Assim, os canais de EEG foram organizados de modo a preservar a proximidade espacial entre canais vizinhos, formando as dimensões espaço 1 e espaço 2. Em seguida, para cada época de EEG, foram calculados os espectrogramas dos 128 canais, que foram organizados em uma estrutura quadridimensional: [espaço 1, espaço 2, frequência, janela de tempo].</paragraph>
+ <paragraph index="142" node_type="writer">Espera-se que determinadas regiões dessa estrutura apresentem padrões característicos de cada palavra, permitindo sua identificação, mesmo com variações entre as amostras.</paragraph>
+ <paragraph index="143" node_type="writer">Para a classificação, foram utilizadas quatro redes neurais, cada uma composta por uma camada convolucional 3D, seguida de ReLU, MaxPooling e uma camada linear. Em cada rede, uma das quatro dimensões da estrutura foi utilizada como dimensão de canais de entrada, enquanto as outras três formaram a entrada tridimensional da camada convolucional. As saídas das redes foram combinadas por diferentes métodos de fusão, como votação majoritária e concatenação.</paragraph>
+ <paragraph index="144" node_type="writer">Os dados de cada participante foram divididos em conjuntos de treinamento, validação e teste, utilizando validação cruzada com seis folds. Os modelos com menor perda (loss) e maior acurácia na validação foram selecionados e posteriormente avaliados no conjunto de teste.</paragraph>
+ <paragraph index="153" node_type="writer">SUMÁRIO</paragraph>
+ <paragraph index="154" node_type="writer">(O TÍTULO DEVE SER CENTRALIZADO E COM DESTAQUE NEGRITO)</paragraph>
+ <paragraph index="156" node_type="writer">(COM NUMERAÇÕES DAS PÁGINAS CORRESPONDENTES </paragraph>
+ <paragraph index="157" node_type="writer">AO TEXTO)</paragraph>
+ <paragraph index="183" node_type="writer">Introdução</paragraph>
+ <paragraph index="184" node_type="writer">Uma Interface Cérebro-Computador (BCI) é um sistema que permite a comunicação direta entre o cérebro humano e um computador, sem a necessidade das vias neuromusculares tradicionais. Isso é possível ao capturar a atividade elétrica do cérebro durante as ações executadas no corpo e convertê-la em comandos que podem ser usados para controlar dispositivos ou máquinas.</paragraph>
+ <paragraph index="185" node_type="writer">A ideia de usar sinais elétricos do cérebro para controle de máquinas surgiu com o pesquisador Jacques Vidal, que em 1973 levantou a questão de poder usar esses sinais para comunicação entre o homem e a máquina (6). Isso foi possível devido ao avanço da eletroencefalografia (EEG), que permite registrar a atividade elétrica do cérebro, e ao avanço da computação digital, que ajudou a processar essas informações.</paragraph>
+ <paragraph index="186" node_type="writer">A atividade cerebral pode ser capturada das diferentes ações que o corpo pode realizar como mover membros do corpo, visualizar telas, pronunciar palavras em voz alta ou apenas pensar na palavra. </paragraph>
+ <paragraph index="187" node_type="writer">Este trabalho se propõe a investigar algumas técnicas de classificar sinais de EEG relacionados à fala. Será abordado em especial a técnica proposta de investigar o sinal em quatro dimensões: espacias, de tempo e frequência; e em paralelo será desenvolvido outras técnicas mais simples para comparação.</paragraph>
+ <paragraph index="188" node_type="writer">Objetivos</paragraph>
+ <paragraph index="189" node_type="writer">O objetivo geral deste trabalho é realizar um estudo detalhado sobre técnicas de classificar sinais de EEG registrados durante a produção da fala em voz alta e durante a produção da fala interna. </paragraph>
+ <paragraph index="190" node_type="writer">O objetivo específico é realizar um estudo sobre técnicas de classificação da fala interna, investigar os desafios inerentes à classificação desse tipo de sinal, fazer comparações de diferentes abordagens e analisar técnicas propostas em outros trabalhos.</paragraph>
+ <paragraph index="191" node_type="writer">Fundamentação Biológica e Revisão Bibliográfica</paragraph>
+ <paragraph index="192" node_type="writer">Esse capítulo aborda uma breve revisão teórica da biologia humana que fundamenta a pesquisa no desenvolvimento de uma BCI focada na classificação de fala e uma revisão bibliográfica sobre o que alguns autores já fizeram em relação ao tema.</paragraph>
+ <paragraph index="193" node_type="writer">Fundamentação Biológica</paragraph>
+ <paragraph index="194" node_type="writer">O controle do corpo humano é realizado pelo trabalho conjunto do Sistema Nervoso Central (SNC) e do Sistema Nervoso Periférico (SNP). Nessa integração o SNC atua como a grande central de processamento e comando do organismo enquanto o SNP conecta o SNC aos órgãos do corpo como olhos, ouvidos, pele, coração, estômago e todos os outros órgãos (1).</paragraph>
+ <paragraph index="196" node_type="writer">O SNC é dividido anatomicamente em duas partes principais: o encéfalo (abrigado dentro do crânio) e a medula espinhal (protegida pela coluna vertebral). O encéfalo, por sua vez é formado por três componentes principais: cérebro, cerebelo e tronco encefálico.</paragraph>
+ <paragraph index="197" node_type="writer">O Sistema Nervoso Central é composto por dois tipos principais de células, os neurônios e os glicócitos. Os neurônios são os responsáveis por receber, processar e transmitir informações na forma de impulsos eletroquímicos. Portanto, os neurônios são as células mais importantes no que se refere a gerar e transmitir a informação pelo corpo.  Os glicócitos desempenham funções auxiliares como nutrir os neurônios, produzir partes dos neurônios como a bainha de mielina, exercer a defesa do organismo entre os outras.</paragraph>
+ <paragraph index="198" node_type="writer">A estrutura básica de um neurônio inclui o corpo celular (soma), os dendritos, que recebem os sinais de outras células, e o axônio, responsável pela propagação desses sinais. Quando os sinais são suficientemente fortes, geram um impulso elétrico chamado de potencial de ação, que viaja ao longo do axônio e é transmitido para outros neurônios através de sinapses.</paragraph>
+ <paragraph index="200" node_type="writer">O potencial de ação é um dos principais fenômenos responsáveis pela atividade elétrica do cérebro. Ele é gerado quando a membrana celular do neurônio sofre uma alteração na sua diferença de potencial, devido ao movimento de íons através da membrana. Este processo de despolarização e repolarização da célula gera um sinal elétrico que se propaga pelo axônio. O estudo desse sinal é crucial para o desenvolvimento de BCIs, uma vez que a medição dos potenciais de ação pode fornecer informações sobre o estado funcional do cérebro.</paragraph>
+ <paragraph index="202" node_type="writer">Dois tecidos fundamentais que formam o SNC são os chamados massa cinzenta e massa branca, os quais se diferenciam pela sua composição celular e pela função principal que desempenham na rede de comunicação do corpo.</paragraph>
+ <paragraph index="203" node_type="writer">A massa cinzenta é formada majoritariamente pelos corpos celulares dos neurônios, dendritos, terminações de axônios e células da glia. É o local onde as conexões (sinapses) realmente acontecem. Ela recebe esse nome porque tem uma coloração acinzentada-rosada nos tecidos vivos. Sua função principal é processar informações, tomar decisões e gerar comandos. Ela analisa os estímulos que chegam dos sentidos, armazena memórias, gera pensamentos e cria as ordens que serão enviadas para os músculos. </paragraph>
+ <paragraph index="204" node_type="writer">A massa branca é  composta essencialmente por axônios (os longos &quot;fios&quot; prolongados dos neurônios) que são revestidos por uma camada isolante chamada bainha de mielina. É justamente essa gordura da mielina que dá a cor branca ao tecido. Sua função principal é transmitir sinais elétricos rapidamente por longas distâncias. Ela funciona como uma superestrada, conectando diferentes áreas de massa cinzenta entre si e ligando o cérebro ao restante do corpo.</paragraph>
+ <paragraph index="205" node_type="writer">As BCIs são focadas em obter os sinais da massa cinzenta no cérebro, pois é nela onde as sinapes e o processamento realmente ocorrem. O posicionamento da massa cinzenta no cérebro possui pontos positivos e negativos para esse objetivo de aquisição por meios de métodos não invasivos.</paragraph>
+ <paragraph index="206" node_type="writer">A localização da massa cinzenta na região mais externa do cérebro é um ponto positivo para a aquisição dos sinais elétricos por métodos não invasivos porque a fonte geradora dos sinais (o córtex) fica mais próxima dos eletrodos posicionados no escalpo.</paragraph>
+ <paragraph index="207" node_type="writer">Um ponto negativo é que mesmo situando-se na região mais externa o sinal elétrico ainda tem que atravessar várias camadas de tecido e osso até ser capturada pelos eletrodos. Isso faz com que o sinal adquirido por métodos não invasivos seja referente a uma região maior do córtex em relação a métodos invasivos e que o sinal adquirido tenha amplitude da ordem de microvolts, enquanto os sinais de métodos invasivos tem ordem de milivolts. </paragraph>
+ <paragraph index="210" node_type="writer">As camadas entre o córtex e os eletrodos...</paragraph>
+ <paragraph index="212" node_type="writer">As áreas específicas para produção de fala….</paragraph>
+ <paragraph index="215" node_type="writer">Revisão Bibliográfica</paragraph>
+ <paragraph index="225" node_type="writer"> Metodologia</paragraph>
+ <paragraph index="227" node_type="writer">Método Proposto</paragraph>
+ <paragraph index="230" node_type="writer">Resultados Atuais</paragraph>
+ <paragraph index="232" node_type="writer">Cronograma</paragraph>
+ <paragraph index="235" node_type="writer">Bibliografia</paragraph>
+ <object index="236" name="ZOTERO_BIBL {&quot;uncited&quot;:[],&quot;omitted&quot;:[],&quot;custom&quot;:[]} CSL_BIBLIOGRAPHY RNDLEbNnlqGgH" object_type="section"/>
+ <paragraph index="237" node_type="writer" parent_index="236">[1]	SANTOS, V. S. DOS. Sistema nervoso: órgãos, funções, SNC x SNP, resumo. Disponível em: &lt;https://brasilescola.uol.com.br/biologia/sistema-nervoso.htm&gt;. Acesso em: 4 nov. 2026. </paragraph>
+ <paragraph index="238" node_type="writer" parent_index="236">[2]	Sistema Nervoso Central: resumo, anatomia e órgãos. Disponível em: &lt;https://www.todamateria.com.br/sistema-nervoso-central/&gt;. Acesso em: 5 nov. 2026. </paragraph>
+ <paragraph index="239" node_type="writer" parent_index="236">[3]	Potencial de ação. , 23 abr. 2026. (Nota técnica).</paragraph>
+ <paragraph index="240" node_type="writer" parent_index="236">[4]	OLIVEIRA, M. Neurônios - Sistema Nervoso. InfoEscola, [s.d.]. Disponível em: &lt;https://www.infoescola.com/sistema-nervoso/neuronios/&gt;. Acesso em: 5 nov. 2026</paragraph>
+ <paragraph index="241" node_type="writer" parent_index="236">[5]	O Neurônio :: Neurociência. Disponível em: &lt;https://neurociencias5.webnode.page/o-neuronio/&gt;. Acesso em: 7 nov. 2026. </paragraph>
+ <paragraph index="242" node_type="writer" parent_index="236">[6]	VIDAL, J. J. Toward Direct Brain-Computer Communication. Annual Review of Biophysics and Bioengineering, v. 2, n. 1, p. 157–180, jun. 1973. </paragraph>
+</indexing>
